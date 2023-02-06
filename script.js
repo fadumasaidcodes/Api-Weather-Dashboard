@@ -1,6 +1,5 @@
 const apiKey = "5f81365ae536b7da813d034c891315db";
 const weatherUrl = "https://api.openweathermap.org/data/2.5/weather";
-const forecastUrl = "https://api.openweathermap.org/data/2.5/forecast";
 
 const searchBtn = document.getElementById("search-btn");
 const cityInput = document.getElementById("city-input");
@@ -12,23 +11,20 @@ searchBtn.addEventListener("click", function() {
   fetch(`${weatherUrl}?q=${city}&appid=${apiKey}`)
     .then(response => response.json())
     .then(data => {
-      const lat = data.coord.lat;
-      const lon = data.coord.lon;
+      const date = new Date();
+      const icon = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+      const temperature = (data.main.temp - 273.15).toFixed(2);
+      const humidity = data.main.humidity;
+      const windSpeed = data.wind.speed;
 
-      fetch(`${forecastUrl}?lat=${lat}&lon=${lon}&appid=${apiKey}`)
-        .then(response => response.json())
-        .then(data => {
-          let output = "";
-          data.list.forEach(function(forecast) {
-            output += `
-              <div>
-                <p>Date: ${forecast.dt_txt}</p>
-                <p>Temperature: ${forecast.main.temp}</p>
-                <p>Description: ${forecast.weather[0].description}</p>
-              </div>
-            `;
-          });
-          weatherDisplay.innerHTML = output;
-        });
+      let output = `
+        <h2>${data.name} (${date.toLocaleDateString()})</h2>
+        <img src="${icon}" alt="Weather Icon">
+        <p>Temperature: ${temperature} &#8451;</p>
+        <p>Humidity: ${humidity}%</p>
+        <p>Wind Speed: ${windSpeed} m/s</p>
+      `;
+
+      weatherDisplay.innerHTML = output;
     });
 });
