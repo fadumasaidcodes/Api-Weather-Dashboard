@@ -45,29 +45,44 @@ searchBtn.addEventListener("click", function () {
                 const forecastHumidity = data.list[i].main.humidity;
                 const forecastWindSpeed = data.list[i].wind.speed;
                 forecastOutput += `
-                <h2> ${date.toLocaleDateString()}</h2>
-              <img src="${forecastIcon}" alt="Weather Icon">
-              <p>Temperature: ${forecastTemperature} &#8451; </p>
-              <p>Wind Speed: ${forecastWindSpeed} m/s</p>
-              <p>Humidity: ${forecastHumidity}%</p>
-              
-              `;
+    <div class="forecast">
+        <h2> ${date.toLocaleDateString()}</h2>
+        <img src="${forecastIcon}" alt="Weather Icon">
+        <p>Temperature: ${forecastTemperature} &#8451; </p>
+        <p>Wind Speed: ${forecastWindSpeed} m/s</p>
+        <p>Humidity: ${forecastHumidity}%</p>
+    </div>
+    `;
             }
             futureWeather.innerHTML = forecastOutput;
         });
-        // Check if local storage is supported
-        if (typeof(Storage) !== "undefined") {
-            // Get the search history from local storage
-            let searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
-            
-            // Get a reference to the history list
-            let historyList = document.getElementById("history-list");
-            
-            // Loop through the search history and add each city as a list item
-            searchHistory.forEach(city => {
-              let cityListItem = document.createElement("li");
-              cityListItem.innerHTML = city;
-              historyList.appendChild(cityListItem);
-            });
-          }
-});
+    // Check if local storage is supported
+    if (typeof (Storage) !== "undefined") {
+        // Get the search history from local storage
+        let searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
+        // If there is no search history in local storage, create an empty array
+        if (!searchHistory) {
+            searchHistory = [];
+        }
+
+        // Add the city to the search history
+        searchHistory.push(city);
+
+        // Store the updated search history in local storage
+        localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+
+        // Get a reference to the history list
+        let historyList = document.getElementById("history-list");
+        let searchHistoryHeader = document.createElement("h2");
+        searchHistoryHeader.innerHTML = "Search History";
+        // Insert the header element before the list items
+        historyList.insertBefore(searchHistoryHeader, historyList.firstChild);
+
+        // Loop through the search history and add each city as a list item
+        searchHistory.forEach(city => {
+            let cityListItem = document.createElement("li");
+            cityListItem.innerHTML = city;
+            historyList.appendChild(cityListItem);
+        });
+    }
+})
