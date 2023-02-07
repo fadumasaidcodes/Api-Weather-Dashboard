@@ -6,6 +6,7 @@ const searchBtn = document.getElementById("search-btn");
 const cityInput = document.getElementById("city-input");
 const weatherDisplay = document.getElementById("weather-display");
 
+// Add a click event listener to the search button
 searchBtn.addEventListener("click", function() {
   const city = cityInput.value;
 
