@@ -49,7 +49,7 @@ When a user click on a city in the search history they are again presented with 
 The following image shows the web application's appearance and functionality:
 
 
-Grading Requirements
+## Grading Requirements
 
 Note: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
 
