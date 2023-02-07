@@ -1,6 +1,7 @@
+// Store the API key, weather URL, and forecast URL in variables
 const apiKey = "5f81365ae536b7da813d034c891315db";
 const weatherUrl = "https://api.openweathermap.org/data/2.5/weather";
-
+// Get references to HTML elements
 const searchBtn = document.getElementById("search-btn");
 const cityInput = document.getElementById("city-input");
 const weatherDisplay = document.getElementById("weather-display");
