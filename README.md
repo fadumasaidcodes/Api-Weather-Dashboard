@@ -113,7 +113,7 @@ Application resembles the mock-up functionality provided in the homework instruc
 
 
 
-Repository Quality: 13%
+## Repository Quality: 13%
 
 
 Repository has a unique name.
