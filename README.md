@@ -9,7 +9,7 @@ The base URL for your API calls should look like the following: https://api.open
 Hint: Using the 5 Day Weather Forecast API, you'll notice that you will need to pass in coordinates instead of just a city name. Using the OpenWeatherMap APIs, how could we retrieve geographical coordinates given a city name?
 You will use localStorage to store any persistent data. For more information on how to work with the OpenWeather API, refer to the Full-Stack Blog on how to use API keys.
 
-User Story
+## User Story
 
 AS A traveler
 I WANT to see the weather outlook for multiple cities
@@ -17,7 +17,7 @@ SO THAT I can plan a trip accordingly
 
 
 
-Acceptance Criteria
+## Acceptance Criteria
 
 Create a weather dashboard with form inputs.
 
@@ -45,7 +45,7 @@ When a user click on a city in the search history they are again presented with 
 
 
 
-Mock-Up
+## Mock-Up
 The following image shows the web application's appearance and functionality:
 
 
