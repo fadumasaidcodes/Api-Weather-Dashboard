@@ -100,7 +100,7 @@ GitHub repository that contains application code.
 
 
 
-Application Quality: 15%
+## Application Quality: 15%
 
 
 Application user experience is intuitive and easy to navigate.
