@@ -44,7 +44,7 @@ searchBtn.addEventListener("click", function () {
                 const forecastTemperature = (data.list[i].main.temp - 273.15).toFixed(2);
                 const forecastHumidity = data.list[i].main.humidity;
                 forecastOutput += `
-                <h2>${data.name} (${date.toLocaleDateString()})</h2>
+                <h2> ${date.toLocaleDateString()}</h2>
               <img src="${forecastIcon}" alt="Weather Icon">
               <p>Temperature: ${forecastTemperature} &#8451; </p>
               <p>Humidity: ${forecastHumidity}%</p>
