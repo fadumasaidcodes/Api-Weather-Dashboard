@@ -47,7 +47,7 @@ When a user click on a city in the search history they are again presented with 
 
 ## Mock-Up
 The following image shows the web application's appearance and functionality:
-
+![weather api](https://user-images.githubusercontent.com/102771343/217261640-27a4cb4b-0cea-4a0c-8bec-e506bfd5c876.JPG)
 
 ## Grading Requirements
 
