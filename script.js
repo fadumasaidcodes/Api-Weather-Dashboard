@@ -28,5 +28,6 @@ searchBtn.addEventListener("click", function() {
       `;
 
       weatherDisplay.innerHTML = output;
+          // Fetch 5-day forecast data
     });
 });
