@@ -69,7 +69,7 @@ A repository that only includes starter code
 
 This Challenge is graded based on the following criteria:
 
-Technical Acceptance Criteria: 40%
+## Technical Acceptance Criteria: 40%
 
 
 Satisfies all of the above acceptance criteria plus the following:
