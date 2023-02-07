@@ -1,5 +1,5 @@
 # Api-Weather-Dashboard
--[live website](https://github.com/fadumasaidcodes/Api-Weather-Dashboard)
+[live website](https://fadumasaidcodes.github.io/Api-Weather-Dashboard/)
 ## Module 8 Server-Side APIs: Weather Dashboard
 
 ## Your Task
