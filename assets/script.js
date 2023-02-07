@@ -55,4 +55,19 @@ searchBtn.addEventListener("click", function () {
             }
             futureWeather.innerHTML = forecastOutput;
         });
+        // Check if local storage is supported
+        if (typeof(Storage) !== "undefined") {
+            // Get the search history from local storage
+            let searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
+            
+            // Get a reference to the history list
+            let historyList = document.getElementById("history-list");
+            
+            // Loop through the search history and add each city as a list item
+            searchHistory.forEach(city => {
+              let cityListItem = document.createElement("li");
+              cityListItem.innerHTML = city;
+              historyList.appendChild(cityListItem);
+            });
+          }
 });
