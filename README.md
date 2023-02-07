@@ -84,7 +84,7 @@ Uses localStorage to store persistent data.
 
 
 
-Deployment: 32%
+## Deployment: 32%
 
 
 Application deployed at live URL.
