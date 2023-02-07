@@ -29,5 +29,14 @@ searchBtn.addEventListener("click", function() {
 
       weatherDisplay.innerHTML = output;
           // Fetch 5-day forecast data
+          fetch(`${forecastUrl}?q=${city}&appid=${apiKey}`)
+          .then(response => response.json())
+          .then(data => {
+            let forecastOutput = "";
+            for (let i = 0; i < data.list.length; i += 8) {
+              const forecastDate = new Date(data.list[i].dt * 1000);
+              const forecastIcon = `https://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png`;
+              const forecastTemperature = (data.list[i].main.temp - 273.15).toFixed(2);
+              const forecastHumidity = data.list[i].main.humidity;
     });
 });
