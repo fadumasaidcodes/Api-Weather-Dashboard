@@ -38,5 +38,23 @@ searchBtn.addEventListener("click", function() {
               const forecastIcon = `https://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png`;
               const forecastTemperature = (data.list[i].main.temp - 273.15).toFixed(2);
               const forecastHumidity = data.list[i].main.humidity;
+              forecastOutput += `
+              <div class="col-sm-2">
+                <div class="card bg-primary text-white mb-3" style="max-width: 18rem;">
+                  <div class="card-header">${forecastDate.toLocaleDateString()}</div>
+                  <div class="card-body">
+                    <img src="${forecastIcon}" alt="Weather Icon">
+                    <p>Temperature: ${forecastTemperature} &#8451; </p>
+                    </p>
+                    <p>Humidity: ${forecastHumidity}%</p>
+                  </div>
+                </div>
+              </div>
+              `;
+            }
+   
+            futureWeather.innerHTML = forecastOutput;
+          });
+      });
     });
-});
+  
