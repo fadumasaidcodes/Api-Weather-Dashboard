@@ -43,8 +43,7 @@ SO THAT I can plan a trip accordingly
 ## Mock-Up
 
 The following image shows the web application's appearance and functionality:
-
-![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for London.](./assets/10-server-side-apis-challenge-demo.png)
+![weather api](https://user-images.githubusercontent.com/102771343/217263713-d354f4ba-ca81-4944-949c-79af0b52cd2e.JPG)
 
 ## Grading Requirements
 
