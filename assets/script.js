@@ -1,15 +1,12 @@
-// Store the API key, weather URL, and forecast URL in variables
 const apiKey = "5f81365ae536b7da813d034c891315db";
 const weatherUrl = "https://api.openweathermap.org/data/2.5/weather";
 const forecastUrl = "https://api.openweathermap.org/data/2.5/forecast";
 
-// Get references to HTML elements
 const searchBtn = document.getElementById("search-btn");
 const cityInput = document.getElementById("city-input");
 const weatherDisplay = document.getElementById("weather-display");
 const futureWeather = document.getElementById("future-weather");
 
-// Add a click event listener to the search button
 searchBtn.addEventListener("click", function () {
     const city = cityInput.value;
 
@@ -23,47 +20,48 @@ searchBtn.addEventListener("click", function () {
             const windSpeed = data.wind.speed;
 
             let output = `
-        <h2>${data.name} (${date.toLocaleDateString()})</h2>
-        <img src="${icon}" alt="Weather Icon">
-        <p>Temperature: ${temperature} &#8451;</p>
-        <p>Humidity: ${humidity}%</p>
-        <p>Wind Speed: ${windSpeed} m/s</p>
-      `;
+                <h2>${data.name} (${date.toLocaleDateString()})</h2>
+                <img src="${icon}" alt="Weather Icon">
+                <p>Temperature: ${temperature} &#8451;</p>
+                <p>Humidity: ${humidity}%</p>
+                <p>Wind Speed: ${windSpeed} m/s</p>
+            `;
 
             weatherDisplay.innerHTML = output;
         });
 
-    // Fetch 5-day forecast data
     fetch(`${forecastUrl}?q=${city}&appid=${apiKey}`)
         .then(response => response.json())
         .then(data => {
             let forecastOutput = "";
             for (let i = 0; i < data.list.length; i += 8) {
                 const date = new Date(data.list[i].dt * 1000);
-                const forecastIcon = `https://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png`;
+                const forecastIcon = `https://openweathermap.org/img/wn/${data.list[i].weather[0].icon}.png`;
                 const forecastTemperature = (data.list[i].main.temp - 273.15).toFixed(2);
                 const forecastHumidity = data.list[i].main.humidity;
                 const forecastWindSpeed = data.list[i].wind.speed;
                 forecastOutput += `
-    <div class="forecast">
-        <h2> ${date.toLocaleDateString()}</h2>
-        <img src="${forecastIcon}" alt="Weather Icon">
-        <p>Temperature: ${forecastTemperature} &#8451; </p>
-        <p>Wind Speed: ${forecastWindSpeed} m/s</p>
-        <p>Humidity: ${forecastHumidity}%</p>
-    </div>
-    `;
+                    <div class="forecast">
+                        <h2>${date.toLocaleDateString()}</h2>
+                        <img src="${forecastIcon}" alt="Weather Icon">
+                        <p>Temperature: ${forecastTemperature} &#8451;</p>
+                        <p>Humidity: ${forecastHumidity}%</p>
+                        <p>Wind Speed: ${forecastWindSpeed} m/s</p>
+                    </div>
+                `;
             }
             futureWeather.innerHTML = forecastOutput;
         });
-    // Check if local storage is supported
+
     if (typeof (Storage) !== "undefined") {
-        // Get the search history from local storage
         let searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
-        // If there is no search history in local storage, create an empty array
         if (!searchHistory) {
             searchHistory = [];
         }
+
+        // Clear the search history list before appending data from localStorage
+        let historyList = document.getElementById("history-list");
+        historyList.innerHTML = "";
 
         // Add the city to the search history
         searchHistory.push(city);
@@ -71,14 +69,10 @@ searchBtn.addEventListener("click", function () {
         // Store the updated search history in local storage
         localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
 
-        // Get a reference to the history list
-        let historyList = document.getElementById("history-list");
         let searchHistoryHeader = document.createElement("h2");
         searchHistoryHeader.innerHTML = "Search History";
-        // Insert the header element before the list items
         historyList.insertBefore(searchHistoryHeader, historyList.firstChild);
 
-        // Loop through the search history and add each city as a list item
         searchHistory.forEach(city => {
             let cityListItem = document.createElement("li");
             cityListItem.innerHTML = city;
