@@ -2,7 +2,7 @@
 [live website](https://fadumasaidcodes.github.io/Api-Weather-Dashboard/)
 
 ## Screenshots of the Website:
-![screenshot1](https://user-images.githubusercontent.com/102771343/217391626-1de8824a-f952-4d32-8a85-e5187d9065ff.JPG)
+![Screenshot 2023-03-05 at 02 10 37](https://user-images.githubusercontent.com/102771343/222937893-19099322-9904-4cfe-a41e-c143625a87c0.png)
 
 ## Module 8 Server-Side APIs: Weather Dashboard
 

@@ -9,7 +9,7 @@ body {
 
 h1 {
     text-align: center;
-    background-color: blue;
+    background-color: rgb(74, 74, 119);
 }
 
 #search-container {
@@ -62,9 +62,9 @@ h1 {
 }
 
 .forecast {
-    background-color: rgb(87, 87, 204);
+    background-color: rgb(104, 104, 169);
     border-radius: 10px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 8px rgba(33, 11, 11, 0.2);
     padding: 20px;
     text-align: center;
     height: 250px;
