@@ -9,7 +9,8 @@ body {
 
 h1 {
     text-align: center;
-    background-color: rgb(74, 74, 119);
+    background-image: linear-gradient(to right, #3462BB,#200B4D);
+    color: #fff;
 }
 
 #search-container {

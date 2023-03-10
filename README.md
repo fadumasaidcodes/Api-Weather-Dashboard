@@ -1,5 +1,5 @@
 # Api-Weather-Dashboard
-[live website](https://fadumasaidcodes.github.io/Api-Weather-Dashboard/)
+[live website](https://fadumasaidcodes.github.io/Five-days-weather/)
 
 ## Screenshots of the Website:
 ![Screenshot 2023-03-05 at 02 10 37](https://user-images.githubusercontent.com/102771343/222937893-19099322-9904-4cfe-a41e-c143625a87c0.png)
